@@ -1,11 +1,13 @@
+const I = require('immutable')
 const path = require('path')
+const appConfig = require('../config')
 
-const config = {
+module.exports = new I.Record({
   entry: {
-    server: path.resolve(__dirname, 'app/server/main.js'),
+    server: appConfig.PATHS.server,
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: appConfig.DEST,
     filename: '[name].js'
   },
   target: 'node',
@@ -25,6 +27,4 @@ const config = {
       }
     ]
   }
-}
-
-module.exports = config
+})()

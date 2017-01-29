@@ -25,6 +25,7 @@
     "webpack": "^1.14.0"
   },
   "scripts": {
+    "dev": "gulp dev",
     "build": "gulp build",
     "start": "gulp serve",
     "clean": "gulp clean"

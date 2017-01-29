@@ -1,7 +1,8 @@
+import path from 'path'
 import Hapi from 'hapi'
 import inert from 'inert'
 
-import routes from './routes'
+import routesHandler from './routes/handler'
 import config from 'scripts/config'
 
 const options:Object = {
@@ -25,7 +26,7 @@ server.register([inert], e => {
   if (e) {
     throw new Error(e)
   }
-  server.route(routes)
+  server.route(routesHandler)
   server.start(e => {
     if (e) {
       throw e

@@ -23,9 +23,13 @@ export default {
         return reply.redirect(
           302, redirectLocation.pathname + redirectLocation.search)
       }
-
+      // TODO: <script src='/static/client.js'/> add the clientjs
       if (renderProps) {
-        const html = <Html><RouterContext {...renderProps} /></Html>
+        const html = (
+          <Html title='ALI WAY'>
+            <RouterContext {...renderProps} />
+          </Html>
+        )
         reply(ReactDOMServer.renderToStaticMarkup(html))
       }
     })

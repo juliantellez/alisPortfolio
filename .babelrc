@@ -4,7 +4,8 @@
     ["module-resolver", {
       "root": ["./"],
       "alias": {
-        "scripts": "./app/scripts"
+        "scripts": "./app/scripts",
+        "tests": "./tests"
       }
     }]
   ]

@@ -1,15 +1,15 @@
 import I from 'immutable'
-import path from 'path'
 import appConfig from '../appConfig'
 
 export default I.Map({
   devtool: 'source-map',
   entry: {
     server: appConfig.get('PATHS').get('server'),
+    client: appConfig.get('PATHS').get('client'),
   },
   output: {
     path: appConfig.get('DEST'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   target: 'node',
   module: {
@@ -22,7 +22,7 @@ export default I.Map({
       {
         test: /\.json$/,
         loader: 'json-loader',
-      }
-    ]
-  }
+      },
+    ],
+  },
 })

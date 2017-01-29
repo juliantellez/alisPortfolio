@@ -7,7 +7,7 @@ import appConfig from './appConfig'
 
 const $ = plugins()
 
-gulp.task('serve', ['watch'], () => {
+gulp.task('serve', () => {
   const serverPath = path.join(appConfig.get('DEST'), 'server.js')
   const child = new (forever.Monitor)(serverPath, {
     watch: true,
@@ -27,7 +27,9 @@ gulp.task('serve', ['watch'], () => {
   child.start()
 })
 
+gulp.task('default', $.sequence('build', 'serve'))
+gulp.task('dev', $.sequence('watch', 'serve'))
 gulp.task('watch', () => require('./webpack/dev.config')())
-gulp.task('build', ['clean'], () => require('./webpack/prod.config')())
+gulp.task('build', () => require('./webpack/prod.config')())
 
 gulp.task('clean', () => del([appConfig.get('DEST')]))

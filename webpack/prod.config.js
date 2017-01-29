@@ -11,13 +11,13 @@ const productionConfig = {
     vendor: ['hapi'],
   },
   output: {
-    filename: '[name]-[hash].js'
+    filename: '[name].js'
   },
   plugins:[
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(uglifyOptions),
-    new webpack.optimize.CommonsChunkPlugin(chunksOptions),
+    // new webpack.optimize.UglifyJsPlugin(uglifyOptions),
+    // new webpack.optimize.CommonsChunkPlugin(chunksOptions),
   ]
 }
 

@@ -8,7 +8,7 @@ const PATHS = I.Map({
   server: path.join(SRC, 'scripts/server/main.js'),
   webpack: {
     dev: path.join(__dirname, 'webpack/dev.config'),
-  }
+  },
 })
 
 export default I.Map({

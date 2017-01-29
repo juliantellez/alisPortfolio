@@ -1,6 +1,6 @@
 import jsdom from 'jsdom'
 
-// :::::::::: BROWSER ::::::::::
+// https://github.com/airbnb/enzyme/blob/master/docs/guides/jsdom.md
 global.jsdom = jsdom.jsdom(
   '<!doctype html><html><body><main id="main"></main></body></html>',
   {

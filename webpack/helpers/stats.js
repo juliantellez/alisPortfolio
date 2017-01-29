@@ -5,7 +5,7 @@ const onError = e => {
   }
 }
 
-module.exports = (e, stats) => {
+export default (e, stats) => {
   if (e) {
     onError(e)
   }

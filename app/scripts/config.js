@@ -1,4 +1,10 @@
 import I from 'immutable'
 import appConfig from '../../appConfig'
 
-export default appConfig.merge(I.Map({}))
+const ENV:string = process.env.NODE_ENV || 'development'
+const isProduction:boolean = ENV === 'production'
+
+export default appConfig.merge(I.Map({
+  ENV,
+  isProduction,
+}))

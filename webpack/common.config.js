@@ -1,13 +1,14 @@
-const I = require('immutable')
-const path = require('path')
-const appConfig = require('../appConfig')
+import I from 'immutable'
+import path from 'path'
+import appConfig from '../appConfig'
 
-module.exports = {
+export default I.Map({
+  devtool: 'source-map',
   entry: {
-    server: appConfig.PATHS.server,
+    server: appConfig.get('PATHS').get('server'),
   },
   output: {
-    path: appConfig.DEST,
+    path: appConfig.get('DEST'),
     filename: '[name].js'
   },
   target: 'node',
@@ -17,9 +18,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
       },
       {
         test: /\.json$/,
@@ -27,4 +25,4 @@ module.exports = {
       }
     ]
   }
-}
+})

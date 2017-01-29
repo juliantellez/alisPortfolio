@@ -1,9 +1,10 @@
-const _ = require('lodash')
-const webpack = require('webpack')
-const statsLog = require('./helpers/stats')
-const uglifyOptions = require('./helpers/uglify')
-const chunksOptions = require('./helpers/chunks')
-const config = require('./common.config')
+import I from 'immutable'
+import _ from 'lodash'
+import webpack from 'webpack'
+import statsLog from './helpers/stats'
+import uglifyOptions from './helpers/uglify'
+import chunksOptions from './helpers/chunks'
+import commonConfig from './common.config'
 
 const productionConfig = {
   entry: {
@@ -20,6 +21,9 @@ const productionConfig = {
   ]
 }
 
-const _config = _.merge(config, productionConfig)
+const _config = _.merge(commonConfig.toJS(), productionConfig)
 const compiler = webpack(_config)
-compiler.run(statsLog)
+
+export default function () {
+  return compiler.run(statsLog)
+}

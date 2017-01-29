@@ -1,0 +1,11 @@
+--check-leaks
+--reporter spec
+--full-trace
+
+--colors
+
+--compilers js:babel-core/register
+
+--require ./tests/globals.js
+
+./tests/**/*.spec.js

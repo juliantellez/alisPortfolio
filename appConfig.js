@@ -5,7 +5,7 @@ const SRC = path.join(__dirname, 'app')
 const DEST = path.join(__dirname, 'build')
 
 const PATHS = new I.Record({
-  server: path.join(SRC, '/server/main.js'),
+  server: path.join(SRC, 'scripts/server/main.js'),
 })()
 
 module.exports = new I.Record({

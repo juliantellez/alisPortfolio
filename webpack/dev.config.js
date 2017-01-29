@@ -3,7 +3,9 @@ const statsLog = require('./helpers/stats')
 const config = require('./common.config')
 
 const compiler = webpack(config)
-
-compiler.watch({
+const watchOpts = {
   ignored: /node_modules/,
-}, statsLog)
+  poll: 1000,
+}
+
+compiler.watch(watchOpts, statsLog)

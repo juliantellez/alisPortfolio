@@ -8,5 +8,5 @@ server.start(e => {
   if (e) {
     throw e
   }
-  console.log(`Server running at: ${server.info.uri}`)
+  console.log(`Server running at: ${server.info.uri}`)  
 })

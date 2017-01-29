@@ -1,8 +1,8 @@
 const I = require('immutable')
 const path = require('path')
-const appConfig = require('../config')
+const appConfig = require('../appConfig')
 
-module.exports = new I.Record({
+module.exports = {
   entry: {
     server: appConfig.PATHS.server,
   },
@@ -27,4 +27,4 @@ module.exports = new I.Record({
       }
     ]
   }
-})()
+}

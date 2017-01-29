@@ -24,6 +24,4 @@ const productionConfig = {
 const _config = _.merge(commonConfig.toJS(), productionConfig)
 const compiler = webpack(_config)
 
-export default function () {
-  return compiler.run(statsLog)
-}
+export default ()  => compiler.run(statsLog)
